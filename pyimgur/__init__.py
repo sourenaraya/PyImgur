@@ -1138,7 +1138,7 @@ class Imgur:
         if bool(file) == bool(url):
             raise LookupError("Either file or url must be given.")
         if file:
-            image = b64encode(image_file.read())
+            image = b64encode(file.read())
         else:
             image = url
 
