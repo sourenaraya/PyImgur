@@ -1121,7 +1121,7 @@ class Imgur:
     def upload_image(self, file=None, url=None, title=None, description=None,
                      album=None):
         """
-        Upload the image at either path or url.
+        Upload the image at either file or url.
 
         :param file: The image file you want to upload.
         :param url: The url to the image you want to upload.
@@ -1137,7 +1137,7 @@ class Imgur:
         """
         if bool(file) == bool(url):
             raise LookupError("Either file or url must be given.")
-        if path:
+        if file:
             image = b64encode(image_file.read())
         else:
             image = url
